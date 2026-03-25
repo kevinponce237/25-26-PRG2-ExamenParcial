@@ -1,6 +1,9 @@
 public class Liga {
-    public Liga(String nombre) {
+    private nombre;
+    private List<Partido> partidos = new ArrayList<>();
     
+    public Liga(String nombre) {
+        this.nombre = nombre;
     }
 
     public void mostrarCalificacion() {
