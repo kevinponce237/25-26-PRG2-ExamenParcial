@@ -4,7 +4,7 @@ public class Cliente {
         Equipo pelatlantico = new Equipo("fc-pelatlántico", "rojo");
         Equipo burger = new Equipo("Burgeger", "verde");
         Equipo geek = new Equipo("geek", "negro");
-        Partido geekXBurger = new Partido(geek, burger, new LocalDateTime(2024, 6, 30, 15, 0));
+        Partido geekXBurger = new Partido(geek, burger, new LocalDateTime(2026, 6, 30, 15, 0));
         unea.programarPartido(geekXBurger);
         Partido  pelatlanticoXgeek = new Partido(pelatlantico, geek, new LocalDateTime(2024, 7, 1, 15, 0));
         unea.programarPartido(pelatlanticoXgeek);
