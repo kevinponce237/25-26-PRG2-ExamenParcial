@@ -1,6 +1,10 @@
 public class Equipo {
     private String nombre;
-    private String 
+    private String  color;
+    private int victorias;
+    private int derrotas;
+    private int empates;
+    private int total;
 
     public Equipo(String nombre, String color) {
 
