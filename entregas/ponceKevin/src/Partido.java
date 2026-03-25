@@ -41,7 +41,10 @@ public class Partido {
     }
 
     public Equipo getGanador() {
-        
+        if (golesEquipo1 > golesEquipo2) {
+            return equipo1;
+        }
+        return equipo2;
     }
 
     public int[] getGolesPorEquipo() {
