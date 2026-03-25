@@ -15,7 +15,7 @@ public class Liga {
     
     }
 
-    public void registrarPartido(Partido partido) {
+    public void programarPartido(Partido partido) {
     
     }
 
