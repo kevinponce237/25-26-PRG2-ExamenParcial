@@ -30,10 +30,10 @@ public class Equipo {
     }
 
     public void actualizarTotal(int puntos) {
-
+        this.total += puntos;
     }
 
     public String toString() {
-      
+        return nombre + "|" + color + "|" + victorias + "|" + derrotas + "|" + empates + "|" + total + "|" + jugadores;
     }
 }
