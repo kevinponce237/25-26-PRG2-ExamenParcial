@@ -82,5 +82,10 @@ public class Liga {
     }
 
     public void registrarResultado() {
+        for (int i = 0; i < totalPartidos; i++) {
+            if (partidos[i].estaPendiente()) {
+                partidos[i].registrarResultado();
+            }
+        }
     }
 }
