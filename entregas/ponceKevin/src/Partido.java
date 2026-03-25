@@ -48,7 +48,7 @@ public class Partido {
     }
 
     public int[] getGolesPorEquipo() {
-        
+        return new int[]{golesEquipo1, golesEquipo2};
     }
 
     public int diasFaltantes() {
