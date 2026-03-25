@@ -5,13 +5,16 @@ public class Equipo {
     private int derrotas;
     private int empates;
     private int total;
+    private int jugadores;
 
     public Equipo(String nombre, String color) {
-
+        this.nombre = nombre;
+        this.color = color;
     }
 
     public Equipo(String nombre,String color,int jugadores) {
-
+        this(nombre,color);
+        this.jugadores = jugadores;
     }
 
     public void aumentarVictorias() {
