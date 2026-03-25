@@ -43,7 +43,6 @@ public class Equipo {
     }
 
     public String toString() {
-        return String.format("%-20s | Color: %-10s | V:%d D:%d E:%d | Pts:%d | Jugadores:%d",
-                nombre, color, victorias, derrotas, empates, total, jugadores);
+        return nombre + " - " + color;
     }
 }
