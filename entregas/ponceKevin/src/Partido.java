@@ -1,5 +1,6 @@
 package ponceKevin.src;
 import java.time.LocalDateTime;
+import java.time.temporal.ChronoUnit;
 public class Partido {
     private Equipo equipo1;
     private Equipo equipo2;
@@ -32,7 +33,7 @@ public class Partido {
     }
 
     public boolean pasoLaFecha() {
-     
+        return !fecha.isAfter(LocalDateTime.now());
     }
 
     public boolean estaPendiente() {
@@ -48,11 +49,16 @@ public class Partido {
     }
 
     public int diasFaltantes() {
-        
+        return calcularDiasFaltantesDesde(LocalDateTime.now());
     }
 
     public int diasFaltantes(LocalDateTime fechaAComparar) {
-        
+        return calcularDiasFaltantesDesde(fechaAComparar);
+    }
+
+    private int calcularDiasFaltantesDesde(LocalDateTime fechaBase) {
+        long dias = ChronoUnit.DAYS.between(fechaBase.toLocalDate(), fecha.toLocalDate());
+        return (int) Math.max(0, dias);
     }
 
     public String toString() {
