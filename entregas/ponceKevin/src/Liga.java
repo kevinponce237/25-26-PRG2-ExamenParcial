@@ -46,23 +46,28 @@ public class Liga {
         for (int i = 0; i < totalPartidos; i++) {
             Partido partido = partidos[i];
             if (!partido.estaPendiente()) {
-                Equipo equipo = partido.getGanador();
-                boolean yaMostrado = false;
+                Equipo ganador = partido.getGanador();
 
-                for (int j = 0; j < i; j++) {
-                    Partido p = partidos[j];
-                    if (!p.estaPendiente() && p.getGanador() == equipo) {
-                        yaMostrado = true;
-                        break;
-                    }
-                }
-
-                if (!yaMostrado) {
-                    int victorias = contarVictorias(equipo);
-                    System.out.println(" - " + equipo + " | victorias=" + victorias);
+                if (!equipoYaFueProcesado(ganador, i)) {
+                    int victorias = contarVictorias(ganador);
+                    System.out.println(" - " + ganador + " | victorias=" + victorias);
                 }
             }
         }
+    }
+
+    private boolean equipoYaFueProcesado(Equipo equipo, int indiceActual) {
+        boolean yaMostrado = false;
+        
+        for (int j = 0; j < indiceActual && !yaMostrado; j++) {
+            Partido partidoAnterior = partidos[j];
+            
+            if (!partidoAnterior.estaPendiente() && partidoAnterior.getGanador() == equipo) {
+                yaMostrado = true;
+            }
+        }
+        
+        return yaMostrado;
     }
 
     private int contarVictorias(Equipo equipo) {
