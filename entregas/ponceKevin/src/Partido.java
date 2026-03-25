@@ -6,7 +6,7 @@ public class Partido {
     private LocalDateTime fecha;
     private int golesEquipo1;
     private int golesEquipo2;
-    private boolean seCompletoELPartido = false;
+    private boolean estaCompleto = false;
     public partido(Equipo equipo1, Equipo equipo2,LocalDateTime fecha) {
         this.equipo1 = equipo1;
         this.equipo2 = equipo2;
@@ -14,11 +14,21 @@ public class Partido {
     }
 
     public void aumentarGoles(int numeroEquipo, int cantidDeGoles) {
-        
+        aumentarGolesEnEquipo(numeroEquipo, cantidDeGoles);
     }
 
     public void aumentarGoles(int numeroEquipo) {
-        
+        aumentarGolesEnEquipo(numeroEquipo, 1);
+    }
+
+    private void aumentarGolesEnEquipo(int numeroEquipo, int cantidadDeGoles) {
+        assert numeroEquipo == 1 || numeroEquipo == 2 : "numeroEquipo debe ser 1 o 2";
+        assert cantidadDeGoles >= 0 : "cantidadDeGoles no puede ser negativa";
+
+        switch (numeroEquipo) {
+            case 1 -> golesEquipo1 += cantidadDeGoles;
+            case 2 -> golesEquipo2 += cantidadDeGoles;
+        }
     }
 
     public boolean pasoLaFecha() {
@@ -26,7 +36,7 @@ public class Partido {
     }
 
     public boolean estaPendiente() {
-        
+        return !estaCompleto;
     }
 
     public Equipo getGanador() {
