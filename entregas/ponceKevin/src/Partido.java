@@ -1,3 +1,4 @@
+package ponceKevin.src;
 public class Partido {
     partido(Equipo equipo1, Equipo equipo2,LocalDateTime fecha) {
         

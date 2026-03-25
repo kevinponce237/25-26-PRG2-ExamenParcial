@@ -1,3 +1,4 @@
+package ponceKevin.src;
 public class Equipo {
     private String nombre;
     private String  color;
